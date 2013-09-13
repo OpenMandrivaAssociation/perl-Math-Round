@@ -1,18 +1,16 @@
-%define upstream_name    Math-Round
-%define upstream_version 0.06
-
-Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+%define modname	Math-Round
+%define modver	0.06
 
 Summary:	Round numbers in different ways
-License:	GPL+ or Artistic
+Name:		perl-%{modname}
+Version:	%perl_convert_version %{modver}
+Release:	3
+License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Math/%{upstream_name}-%{upstream_version}.tar.gz
-
-BuildRequires:	perl-devel
+Url:		http://search.cpan.org/dist/%{modname}
+Source0:	http://www.cpan.org/modules/by-module/Math/%{modname}-%{modver}.tar.gz
 BuildArch:	noarch
+BuildRequires:	perl-devel
 
 %description
 Math::Round supplies functions that will round numbers in different ways.
@@ -20,7 +18,7 @@ The functions round and nearest are exported by default; others are available
 as described below. "use ... qw(:all)" exports all functions.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -qn %{modname}-%{modver}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -36,12 +34,5 @@ perl Makefile.PL INSTALLDIRS=vendor
 %doc README
 %{perl_vendorlib}/Math
 %{perl_vendorlib}/auto/Math
-%{_mandir}/*/*
-
-
-%changelog
-* Wed Oct 14 2009 Colin Guthrie <cguthrie@mandriva.org> 0.60.0-1mdv2010.0
-+ Revision: 457246
-- Remove . from summary
-- import perl-Math-Round
+%{_mandir}/man3/*
 
