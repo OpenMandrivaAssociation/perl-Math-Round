@@ -1,10 +1,10 @@
 %define modname	Math-Round
-%define modver	0.06
+%define modver 0.07
 
 Summary:	Round numbers in different ways
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	11
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
@@ -35,4 +35,3 @@ perl Makefile.PL INSTALLDIRS=vendor
 %{perl_vendorlib}/Math
 %{perl_vendorlib}/auto/Math
 %{_mandir}/man3/*
-
